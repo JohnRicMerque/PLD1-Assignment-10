@@ -23,7 +23,7 @@ def readQRc(frame):
         
         # text to show decoded data
         font = cv2.FONT_HERSHEY_SIMPLEX
-        cv2.putText(frame, qrcodeInfo, (x + 6, y - 6), font, 1.0, (0, 0, 255), 3)
+        cv2.putText(frame, "CONTACT TRACING INFORMATION", (x + 6, y - 6), font, 1.0, (0, 0, 255), 3)
 
         # writing it into a text file
         with open("QRinfo.txt", mode ='w') as file:
