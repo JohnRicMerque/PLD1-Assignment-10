@@ -21,6 +21,7 @@ def readQRc(frame):
         # date and time configuration
         now = datetime.datetime.now()
         dateNow = "%s/%s/%s" % (now.month,now.day,now.year)
+        timeNow = "%s:%s" % (now.hour, now.minute)
 
         # drawing rectangle to see if code is detected
         qrcodeInfo = qrcode.data.decode('utf-8')
@@ -32,7 +33,7 @@ def readQRc(frame):
 
         # writing it into a text file
         with open("QRinfo.txt", mode ='w') as file:
-            file.write("Scanned QR Code:" + qrcodeInfo + (f"\n\n\nDate: {dateNow}"))
+            file.write("Scanned QR Code:" + qrcodeInfo + (f"\n\n\nDate: {dateNow}\nTime: {timeNow}"))
     return frame
 
 def read():
