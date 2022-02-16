@@ -1,0 +1,21 @@
+Scanned QR Code:CONTACT TRACING INFORMATION
+
+Name: John Ric C. Merque
+Age: 19
+Sex: Male
+
+Vaccination Dose: Fully Vaccinated
+Vaccine: Pfizer
+
+COVID Sysmptoms: None
+
+Last place you went: Vormir
+
+Last people you interacted with:
+Black Widow
+Hawkeye
+Red Skull
+
+
+Date: 2/16/2022
+Time: 18:54
