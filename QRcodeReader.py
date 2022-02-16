@@ -9,6 +9,7 @@
 
 import cv2
 import pyzbar.pyzbar as pyzbar
+import datetime
 
 # function to read QR Code
 def readQRc(frame):
@@ -16,7 +17,11 @@ def readQRc(frame):
     qrcodes = pyzbar.decode(frame)
     for qrcode in qrcodes:
         x, y , w, h = qrcode.rect
-        
+
+        # date and time configuration
+        now = datetime.datetime.now()
+        dateNow = "%s/%s/%s" % (now.month,now.day,now.year)
+
         # drawing rectangle to see if code is detected
         qrcodeInfo = qrcode.data.decode('utf-8')
         cv2.rectangle(frame, (x, y),(x+w, y+h), (255, 0, 0), 2)
@@ -27,7 +32,7 @@ def readQRc(frame):
 
         # writing it into a text file
         with open("QRinfo.txt", mode ='w') as file:
-            file.write("Scanned QR Code:" + qrcodeInfo)
+            file.write("Scanned QR Code:" + qrcodeInfo + (f"\n\n\nDate: {dateNow}"))
     return frame
 
 def read():
